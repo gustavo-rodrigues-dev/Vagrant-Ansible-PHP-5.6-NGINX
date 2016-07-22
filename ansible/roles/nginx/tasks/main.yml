@@ -1,0 +1,23 @@
+---
+- name: Install Nginx
+  sudo: yes
+  apt: pkg=nginx state=latest
+
+- name: Nginx | create path SSL nginx
+  file: path=/etc/nginx/ssl state=directory  mode=0755
+  sudo: true
+
+- name: Nginx | ssl.crt
+  template: src=nginx.crt.tpl
+            dest=/etc/nginx/ssl/nginx.crt
+  sudo: true
+
+- name: Nginx | ssl.key
+  template: src=nginx.key.tpl
+            dest=/etc/nginx/ssl/nginx.key
+  sudo: true
+
+- name: Change default nginx site
+  sudo: yes
+  template: src=default.tpl dest=/etc/nginx/sites-available/default
+  notify: restart nginx
