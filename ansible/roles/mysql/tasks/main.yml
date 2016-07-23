@@ -33,4 +33,4 @@
     - "{{ current_hostname.stdout | lower }}"
 
 - name: mysql | Create users
-  mysql_user: name={{ mysql.user }} password={{ mysql.password }} priv={{ mysql.database }}.*:ALL host='%' state=present login_user=root login_password={{ mysql.root_password }}
+  mysql_user: name={{ mysql.user }} password={{ mysql.password }} priv=*.*:ALL host='%' state=present login_user=root login_password={{ mysql.root_password }}
