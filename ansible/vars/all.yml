@@ -1,7 +1,7 @@
 ---
 server:
     install: '1'
-    packages: [vim, git, nodejs, npm, imagemagick, supervisor, atool, atop, make, mc]
+    packages: [vim, git, nodejs, npm, imagemagick, supervisor, atool, atop, make, mc, tig, tree, unzip]
     timezone: America/Sao_Paulo
     locale: pt_BR.UTF-8
 vagrant_local:
@@ -9,8 +9,8 @@ vagrant_local:
     vm: { base_box: trusty64, hostname: websocket.local, ip: 192.168.33.99, memory: '1024', sharedfolder: ../app/, useVagrantCloud: '1', syncType: nfs }
 nginx:
     install: '1'
-    docroot: /sites
-    servername: app.vb
+    docroot: /sites/api
+    servername: websocket.local
 mysql:
     install: '1'
     root_password: '123456'
@@ -31,4 +31,7 @@ xdebug:
     install: '1'
 composer:
     install: '1'
+git:
+  name: 'gustavoBeavis'
+  email: 'gustavo.beavis@gmail.com'
 
