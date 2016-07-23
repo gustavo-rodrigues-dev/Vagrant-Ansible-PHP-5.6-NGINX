@@ -1,0 +1,4 @@
+---  
+- name: Bashrc Config | add .bashrc file
+  template: src=bashrc.tpl dest=/home/vagrant/.bashrc
+  sudo: true

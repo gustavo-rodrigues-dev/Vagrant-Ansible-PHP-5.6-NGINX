@@ -1,0 +1,4 @@
+---  
+- name: Git Config | add .gitconfig file
+  template: src=gitconfig.tpl dest=/home/vagrant/.gitconfig
+  sudo: true
