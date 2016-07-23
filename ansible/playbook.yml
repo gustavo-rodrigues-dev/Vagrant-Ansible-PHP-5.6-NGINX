@@ -5,6 +5,7 @@
     - vars/all.yml
   roles:
     - server
+    - base
     - vagrant_local
     - nginx
     - mysql
